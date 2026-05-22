@@ -53,3 +53,15 @@ jobs:
         push: true
         tags: drjydv436/springsecurityandjwt:latest
 
+    # Example Deployment Step (EC2 via SSH)
+    - name: Deploy to EC2
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ubuntu
+        key: ${{ secrets.EC2_SSH_KEY }}
+        script: |
+          docker pull drjydv436/springsecurityandjwt:latest
+          docker stop spring-app || true
+          docker rm spring-app || true
+          docker run -d -p 8080:8080 --name spring-app drjydv436/springsecurityandjwt:latest
