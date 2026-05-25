@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: SpringSecurityAndJWT-app
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: SpringSecurityAndJWT-app
+
+  template:
+    metadata:
+      labels:
+        app: SpringSecurityAndJWT-app
+
+    spec:
+      containers:
+        - name: SpringSecurityAndJWT-app
+          image: drjydv436/springsecurityandjwt:latest
+
+          ports:
+            - containerPort: 8080
