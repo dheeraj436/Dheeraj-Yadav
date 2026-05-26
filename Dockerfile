@@ -1,7 +1,8 @@
 # Use an official Java runtime as a base image
-RUN echo 'You inside Docker file now...'
-
 FROM eclipse-temurin:17-jdk-alpine
+
+# Debug message
+RUN echo 'You inside Docker file now...'
 
 # Set the working directory inside the container
 WORKDIR /app
