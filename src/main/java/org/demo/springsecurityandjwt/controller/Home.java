@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class Home {
 
     @GetMapping("/home")
-    public String test() {
+    public String dashboard() {
+        String pod = System.getenv("HOSTNAME");
+        System.out.println("Request served by: " + pod);
         return "Welcome to Home Page";
     }
 }
