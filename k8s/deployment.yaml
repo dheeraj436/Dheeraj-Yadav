@@ -18,7 +18,7 @@ spec:
 
     spec:
       containers:
-        - name: springboot-app
+        - name: springboot-container
           image: drjydv436/springsecurityandjwt:latest
 
           ports:
