@@ -51,7 +51,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: drjydv436/springsecurityandjwt:latest
+        tags: drjydv436/springsecurityandjwt:v2
 
     # Deploy to Kubernetes on EC2
     - name: Deploy to Kubernetes
@@ -65,11 +65,11 @@ jobs:
           export KUBECONFIG=$HOME/.kube/config
     
           # Pull latest image on cluster nodes
-          docker pull drjydv436/springsecurityandjwt:latest || true
+          docker pull drjydv436/springsecurityandjwt:v2 || true
     
           # Update deployment image
           kubectl set image deployment/springboot-deployment \
-          springboot-container=drjydv436/springsecurityandjwt:latest
+          springboot-container=drjydv436/springsecurityandjwt:v2
     
           # Restart deployment
           kubectl rollout restart deployment springboot-deployment
