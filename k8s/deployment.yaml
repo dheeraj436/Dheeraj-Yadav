@@ -2,23 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: SpringSecurityAndJWT-app
+  name: springboot-app
 
 spec:
   replicas: 3
 
   selector:
     matchLabels:
-      app: SpringSecurityAndJWT-app
+      app: springboot-app
 
   template:
     metadata:
       labels:
-        app: SpringSecurityAndJWT-app
+        app: springboot-app
 
     spec:
       containers:
-        - name: SpringSecurityAndJWT-app
+        - name: springboot-app
           image: drjydv436/springsecurityandjwt:latest
 
           ports:
