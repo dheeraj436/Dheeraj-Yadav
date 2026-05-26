@@ -20,6 +20,7 @@ spec:
       containers:
         - name: springboot-container
           image: drjydv436/springsecurityandjwt:latest
+          imagePullPolicy: Always
 
           ports:
             - containerPort: 8080
