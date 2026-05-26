@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: springboot-container
-          image: drjydv436/springsecurityandjwt:latest
+          image: drjydv436/springsecurityandjwt:v2
           imagePullPolicy: Always
 
           ports:
